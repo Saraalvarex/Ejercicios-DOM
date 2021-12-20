@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejemplos explicación de DOM</title>
+  <style type="text/css">
+    .rojo{
+      background-color: red;
+      text-align: center;
+    }
+    .borde{
+      border-style: dotted;      
+      width: 300px;      
+    }
+  </style>
+</head>
+<body>
+  
+  <ul id="idLista">
+    <li > Primer elemento</li>
+    <li > Segundo elemento</li>
+  </ul>
+  
+  <form id="idForm" name="Formulario">    
+      <br>
+    <input type="button" value="Insertar aleatorio" onclick="insertarAleatorio()">
+    <input type="button" value="Eliminar li" onclick="eliminarLi()">
+</form>
+</body>
+<script>
+    /**
+    *  Añadir un párrafo(vacío y un comentario)
+    */
+    function insertarAleatorio(){
+      
+      // Creamos el párrafo y el comentario, aun no están añadidos al documento
+      let nuevop = document.createElement('li');    
+      let lineaRandom = document.createTextNode(Math.random());
+      
+  
+      let contenedor = document.getElementById("idLista")
+      
+      // añadimos el comentario y el párrafo al documento.
+      contenedor.appendChild(lineaRandom)
+      contenedor.appendChild(nuevop)
+    } 
+
+    /**
+   * Eliminar un elemento, indicando las dos posibilidades para eliminar
+   */
+  function eliminarLi(){
+    // Buscamos el elemento a borrar 
+    let li=document.querySelector("#idLista li")
+    //comprobar que el hay  pirmer elemento para que no me de error si borro algo
+    
+    if ( li != null ){
+      // [Opcion 1] -> Borramos el elemento, a partir del padre
+      //parrafo.parentElement.removeChild(parrafo);
+
+      // [Opcion 2] -> Borrarmos el elemento(con childNode)
+      li.remove()  
+    }else{
+      alert("No te quedan más párrafos!!!!")
+    }
+    
+  }  
+
+    </script>

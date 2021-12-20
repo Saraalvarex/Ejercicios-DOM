@@ -1,0 +1,39 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejemplos explicación de DOM</title>
+  <style type="text/css">
+    .rojo{
+      background-color: red;
+      text-align: center;
+    }
+    .borde{
+      border-style: dotted;      
+      width: 300px;      
+    }
+  </style>
+</head>
+<body>
+  <div id="idCheckbox">
+    <p>Número de checkbox</p>
+  </div>
+  <form id="idForm" name="Formulario">      
+    <input type="button" value="Crear Checkbox" onclick="crearCheckbox()">
+  </form>
+</body>
+<script>
+    function crearCheckbox(){
+        let nuevo = document.createElement('p');    
+        for (let i=0; i<num; i++){
+             checkbox=document.createElement('checkbox')
+        }
+        let contenedor = document.getElementById("idCheckbox")
+         // añadimos el contenido al párrafo
+        nuevo.appendChild(checkbox)
+        //Añadimos el párrafo al documento
+        contenedor.appendChild(nuevo)
+    }
+</script>

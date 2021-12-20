@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="sylesheet" type="text/css" href="ejer4-3.css"/>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 4.3</title>
+</head>
+<body>
+    <form id="idForm" name="Formulario">
+        <label for="idDeporte">¿Mi deporte favorito?</label>
+        <input id="idDeporte" type=text name="pregunta" size=50 >
+        </br>
+        <label for="idSerie">¿Mi serie favorita?</label>
+        <input id="idSerie" type=text name="pregunta" size=50 >
+        </br>
+        <label for="idPelicula">¿Mi película favortita?</label>
+        <input id="idPelicula" type=text name="pregunta" size=50 >
+        </br>
+        <input type="button" value="Aceptar aficiones" onclick="anadirAficion()">
+    </form>	
+    <h1>MIS AFICIONES...</h1>
+    <div>
+        <p class="idDeporte">¿Mi deporte favorito?</p>
+        <p class="idSerie">¿Mi serie favorita?</p>
+        <p class="idPelicula">¿Mi película favorita?</p>
+    </div>
+</body>
+</html>
+<script>
+    const idDeporte=document.querySelector('.idDeporte');
+    const idSerie=document.querySelector('.idSerie');
+    const idPelicula=document.querySelector('.idPelicula');
+
+     function anadirAficion(){
+        
+        let inputs = document.querySelectorAll('#idForm input[type=text]');
+        //console.log(inputs[elemento].value);
+        
+         idDeporte.innerHTML+="<br>"+inputs[0].value;
+         console.log(idDeporte);
+         idSerie.innerHTML+="<br>"+inputs[1].value;
+         idPelicula.innerHTML+="<br>"+inputs[2].value;
+        
+    }
+
+</script>

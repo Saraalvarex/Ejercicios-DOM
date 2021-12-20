@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejemplos explicación de DOM</title>
+</head>
+<body>      
+      <form id="idForm" name="Formulario">      
+        Número de checkbox <input type="number"></input>
+        <input type="button" value="Añadir Checkbox" onclick="anadirCheckbox()">
+        <div id="idCheckbox">
+        </div>
+      </form>
+    
+    </body>
+    <script>
+        /**
+        *  Añadir un elemento(con contenido)
+        */
+
+        function anadirCheckbox(){
+          
+          for(let i = 0; i < document.querySelector('input').value; i++){
+          
+            // Creamos el elemento y contenido
+          let nuevoLabel = document.createElement('label');
+          let contenidoLabel = document.createTextNode("Nuevo elemento: "+Math.random());
+
+          let nuevoInput = document.createElement('input');
+          nuevoInput.setAttribute("type", "checkbox");
+         
+          let contenedor = document.getElementById("idCheckbox");
+
+          let nuevoBr = document.createElement('br');
+
+            // añadimos el contenido al ul. Al parrafo le asociamos el contenido
+            nuevoLabel.appendChild(contenidoLabel);
+
+          //Añadimos el párrafo al documento
+          contenedor.appendChild(nuevoInput);
+          contenedor.appendChild(nuevoLabel);
+          contenedor.appendChild(nuevoBr);
+          }
+      } 
+    </script>
+
+</body>
+</html>

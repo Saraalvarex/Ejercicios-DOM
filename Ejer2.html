@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<div>
+    <p>Este el primer parrafo</p>
+    <p>Este el 2º</p>
+    <p>Este el 3º</p>
+</div>
+
+<div class="div2">
+    <p>Este el primer parrafo</p>
+    <p>Este el 2º</p>
+    <p>Este el 3º</p>
+</div>
+    <button onclick="ponerPuntos()" id="button">Agregar un punto al final de cada parrafo</button>
+<script>
+    function ponerPuntos(){
+        let nodos= document.querySelectorAll(".div2 p");
+        
+        nodos.forEach(element => {
+            element.innerHTML+=".";
+        });
+    }
+ </script>
+</body>
+</html>
